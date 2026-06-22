@@ -16,7 +16,8 @@ body {
 /* Efekt retro monitora */
 .scanline {
     position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
     background: radial-gradient(circle at center, transparent 0%, rgba(0,0,0,0.4) 100%);
     pointer-events: none;
     z-index: 50;
@@ -105,7 +106,7 @@ body {
     animation: pulse 2s infinite;
 }
 
-/* Scena 3D i Teksty */
+/* Scena 3D */
 #canvas-container {
     position: absolute;
     top: 0; left: 0;
@@ -113,6 +114,7 @@ body {
     z-index: 1;
 }
 
+/* Overlay */
 .overlay-text {
     position: absolute;
     z-index: 2;
@@ -138,7 +140,19 @@ body {
     margin: 0 auto;
 }
 
-/* Ozdobniki w rogach */
+/* NOWE: drugi napis (identyczny styl jak h2) */
+.love-title {
+    color: #ff4d6d;
+    font-size: 20px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    text-shadow: 0 0 12px rgba(255, 77, 109, 0.6);
+    margin-top: 10px;
+
+    animation: heartbeat 1.2s infinite;
+}
+
+/* meta */
 .meta-top-left {
     position: absolute;
     top: 30px; left: 30px;
@@ -156,7 +170,7 @@ body {
     letter-spacing: 1px;
 }
 
-/* Animacje */
+/* animacje */
 @keyframes blink {
     0%, 100% { opacity: 1; }
     50% { opacity: 0; }
@@ -177,18 +191,7 @@ body {
     to { opacity: 1; transform: scale(1); }
 }
 
-/* === NOWE: wiadomość + bicie serca === */
-.love-message {
-    color: #ff4d6d;
-    text-shadow: 0 0 12px rgba(255, 77, 109, 0.6);
-    font-family: 'Courier New', monospace;
-    margin-top: 8px;
-    font-size: 1.1rem;
-
-    display: inline-block;
-    animation: heartbeat 1.2s infinite;
-}
-
+/* bicie serca */
 @keyframes heartbeat {
     0%   { transform: scale(1); }
     25%  { transform: scale(1.08); }
