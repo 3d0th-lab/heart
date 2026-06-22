@@ -1,5 +1,5 @@
 // --- SEKCJA LOGIKI KONSOLI ---
-const textToType = "Initializing heart.PROTOCOL_v2.0...";
+const textToType = "Initializing heart.exe...";
 const typewriterElement = document.getElementById('typewriter');
 let charIndex = 0;
 
