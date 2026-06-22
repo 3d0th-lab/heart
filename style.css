@@ -1,0 +1,162 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #050505;
+    color: rgba(255, 255, 255, 0.8);
+    font-family: 'Courier New', Courier, monospace;
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+}
+
+/* Efekt retro monitora */
+.scanline {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: radial-gradient(circle at center, transparent 0%, rgba(0,0,0,0.4) 100%);
+    pointer-events: none;
+    z-index: 50;
+}
+
+.container {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.hidden {
+    opacity: 0;
+    pointer-events: none;
+    transform: scale(1.05);
+}
+
+/* Konsola */
+.console-box {
+    width: 100%;
+    max-w: 600px;
+    padding: 20px;
+}
+
+.line {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.prefix {
+    color: rgba(255, 77, 109, 0.6);
+    margin-right: 10px;
+}
+
+.status-ready {
+    color: #4ade80;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.cursor {
+    animation: blink 0.8s infinite;
+}
+
+.secret-area {
+    margin-top: 30px;
+    animation: fadeInUp 0.5s ease forwards;
+}
+
+.italic {
+    color: rgba(255, 255, 255, 0.4);
+    font-style: italic;
+    margin-bottom: 20px;
+}
+
+/* Przycisk deszyfrowania */
+.decrypt-button {
+    background: rgba(255, 77, 109, 0.05);
+    border: 1px solid rgba(255, 77, 109, 0.3);
+    color: #ff4d6d;
+    padding: 12px 24px;
+    font-family: inherit;
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 2px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+}
+
+.decrypt-button:hover {
+    background: rgba(255, 77, 109, 0.15);
+    box-shadow: 0 0 15px rgba(255, 77, 109, 0.2);
+}
+
+.hint {
+    font-size: 10px;
+    color: rgba(255, 255, 255, 0.2);
+    margin-top: 15px;
+    animation: pulse 2s infinite;
+}
+
+/* Scena 3D i Teksty */
+#canvas-container {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    z-index: 1;
+}
+
+.overlay-text {
+    position: absolute;
+    z-index: 2;
+    text-align: center;
+    pointer-events: none;
+    animation: delayFadeIn 2s ease forwards;
+    opacity: 0;
+}
+
+.overlay-text h2 {
+    color: #ff4d6d;
+    font-size: 20px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    text-shadow: 0 0 12px rgba(255, 77, 109, 0.6);
+    margin-bottom: 10px;
+}
+
+.divider {
+    width: 50px;
+    height: 1px;
+    background: rgba(255, 77, 109, 0.3);
+    margin: 0 auto;
+}
+
+/* Ozdobniki w rogach */
+.meta-top-left {
+    position: absolute;
+    top: 30px; left: 30px;
+    font-size: 10px;
+    color: rgba(255, 255, 255, 0.1);
+    letter-spacing: 1px;
+    line-height: 1.5;
+}
+
+.meta-bottom-right {
+    position: absolute;
+    bottom: 30px; right: 30px;
+    font-size: 10px;
+    color: rgba(255, 255, 255, 0.1);
+    letter-spacing: 1px;
+}
+
+/* Animacje CSS */
+@keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+@keyframes fadeInUp { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes pulse { 0%, 100% { opacity: 0.2; } 50% { opacity: 0.5; } }
+@keyframes delayFadeIn { from { opacity: 0; transform: scale(0.9); } to { opacity: 1; transform: scale(1); } }
