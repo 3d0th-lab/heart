@@ -77,7 +77,7 @@ body {
     margin-bottom: 20px;
 }
 
-/* Przycisk deszyfrowania */
+/* Przycisk */
 .decrypt-button {
     background: rgba(255, 77, 109, 0.05);
     border: 1px solid rgba(255, 77, 109, 0.3);
@@ -106,7 +106,7 @@ body {
     animation: pulse 2s infinite;
 }
 
-/* Scena 3D */
+/* Canvas 3D */
 #canvas-container {
     position: absolute;
     top: 0; left: 0;
@@ -124,32 +124,33 @@ body {
     opacity: 0;
 }
 
-.overlay-text h2 {
-    color: #ff4d6d;
-    font-size: 20px;
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    text-shadow: 0 0 12px rgba(255, 77, 109, 0.6);
-    margin-bottom: 10px;
-}
-
-.divider {
-    width: 50px;
-    height: 1px;
-    background: rgba(255, 77, 109, 0.3);
-    margin: 0 auto;
-}
-
-/* NOWE: drugi napis (identyczny styl jak h2) */
+/*  identyczny neon obu napisów */
+.overlay-text h2,
 .love-title {
     color: #ff4d6d;
     font-size: 20px;
     letter-spacing: 4px;
     text-transform: uppercase;
-    text-shadow: 0 0 12px rgba(255, 77, 109, 0.6);
-    margin-top: 10px;
 
+    text-shadow:
+        0 0 5px rgba(255, 77, 109, 0.6),
+        0 0 12px rgba(255, 77, 109, 0.6),
+        0 0 20px rgba(255, 77, 109, 0.4);
+
+    margin: 10px 0;
+}
+
+/* bicie serca tylko dla drugiego napisu */
+.love-title {
     animation: heartbeat 1.2s infinite;
+}
+
+/* divider */
+.divider {
+    width: 50px;
+    height: 1px;
+    background: rgba(255, 77, 109, 0.3);
+    margin: 0 auto;
 }
 
 /* meta */
@@ -191,7 +192,7 @@ body {
     to { opacity: 1; transform: scale(1); }
 }
 
-/* bicie serca */
+/* heartbeat */
 @keyframes heartbeat {
     0%   { transform: scale(1); }
     25%  { transform: scale(1.08); }
