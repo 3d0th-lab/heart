@@ -108,7 +108,8 @@ body {
 /* Scena 3D i Teksty */
 #canvas-container {
     position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
     z-index: 1;
 }
 
@@ -155,8 +156,43 @@ body {
     letter-spacing: 1px;
 }
 
-/* Animacje CSS */
-@keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
-@keyframes fadeInUp { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-@keyframes pulse { 0%, 100% { opacity: 0.2; } 50% { opacity: 0.5; } }
-@keyframes delayFadeIn { from { opacity: 0; transform: scale(0.9); } to { opacity: 1; transform: scale(1); } }
+/* Animacje */
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 0.2; }
+    50% { opacity: 0.5; }
+}
+
+@keyframes delayFadeIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+/* === NOWE: wiadomość + bicie serca === */
+.love-message {
+    color: #ff4d6d;
+    text-shadow: 0 0 12px rgba(255, 77, 109, 0.6);
+    font-family: 'Courier New', monospace;
+    margin-top: 8px;
+    font-size: 1.1rem;
+
+    display: inline-block;
+    animation: heartbeat 1.2s infinite;
+}
+
+@keyframes heartbeat {
+    0%   { transform: scale(1); }
+    25%  { transform: scale(1.08); }
+    40%  { transform: scale(0.98); }
+    60%  { transform: scale(1.12); }
+    100% { transform: scale(1); }
+}
