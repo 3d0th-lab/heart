@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encrypted Message</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body>
+
+    <div class="scanline"></div>
+
+    <div id="console-stage" class="container">
+        <div class="console-box">
+            <div class="line">
+                <span class="prefix">[system]</span>
+                <span id="typewriter"></span><span class="cursor">_</span>
+            </div>
+            
+            <div class="line status-line" style="display: none;">
+                <span class="prefix">[status]</span>
+                <span class="status-ready">READY</span>
+            </div>
+
+            <div id="secret-package" class="secret-area" style="display: none;">
+                <p class="italic">> One encrypted package found for you.</p>
+                
+                <button id="decrypt-btn" class="decrypt-button">
+                    <span class="icon">🔒</span>
+                    <span class="btn-text">Decrypt Message</span>
+                </button>
+                
+                <p class="hint">(or just click anywhere)</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="reveal-stage" class="container hidden">
+        <div id="canvas-container"></div>
+        
+        <div class="overlay-text">
+            <h2>Decrypted Successfully</h2>
+            <div class="divider"></div>
+        </div>
+
+        <div class="meta-top-left">
+            <div>ln: 420</div>
+            <div>id: 0xDEADBEEF</div>
+            <div>type: organic_emotion</div>
+        </div>
+        <div class="meta-bottom-right">
+            heart_reveal // success
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
